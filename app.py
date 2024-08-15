@@ -62,7 +62,16 @@ if os.path.exists(csv_file):
     if not df.empty:
  
         # Sort the data by the Date column in ascending order
-        df['Date'] = pd.to_datetime(df['Date'])
+        #df['Date'] = pd.to_datetime(df['Date'])
+        #df['Date'] = pd.to_datetime(df['Date'], format='%d-%m-%Y', dayfirst=True)  # Parse dates with dayfirst=True
+        
+        # Assuming df is already populated with data from your CSV
+        # Parse the dates in the format YYYY-MM-DD
+        df['Date'] = pd.to_datetime(df['Date'], format='%Y-%m-%d', errors='coerce')
+
+        # Reformat the dates to DD-MM-YYYY for displaying in the chart
+        df['Date'] = df['Date'].dt.strftime('%d-%m-%Y')
+
         df = df.sort_values(by='Date', ascending=True)
         
         #Display the data in a table
@@ -95,7 +104,8 @@ if os.path.exists(csv_file):
         # Graph #2    
         # Plotting the graph to show the total time spent on each day
         st.subheader("Total Time Spent on Each Day")
-        df['Date'] = pd.to_datetime(df['Date']).dt.strftime('%d-%m-%Y')  # Format dates to dd-mm-YYYY
+        #df['Date'] = pd.to_datetime(df['Date']).dt.strftime('%d-%m-%Y')  # Format dates to dd-mm-YYYY
+        #df['Date'] = pd.to_datetime(df['Date'], format='%Y-%m-%d', errors='coerce')
         day_time = df.groupby("Date")["Hours Worked"].sum()
         
         if not day_time.empty:
@@ -116,7 +126,8 @@ if os.path.exists(csv_file):
         # Graph #3
         # Plotting the graph to show the total time spent on each project on each day
         st.subheader("Total Time Spent on Each Project on Each Day")
-        df['Date'] = pd.to_datetime(df['Date']).dt.strftime('%d-%m-%Y')  # Format dates to dd-mm-YYYY
+        #df['Date'] = pd.to_datetime(df['Date']).dt.strftime('%d-%m-%Y')  # Format dates to dd-mm-YYYY
+        df['Date'] = pd.to_datetime(df['Date'], format='%d-%m-%Y', dayfirst=True)  # Parse dates with dayfirst=True
         project_day_time = df.groupby(["Date", "Project Name"])["Hours Worked"].sum().unstack()
         
         if not project_day_time.empty:

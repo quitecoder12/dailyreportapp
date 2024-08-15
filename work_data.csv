@@ -5,7 +5,15 @@ Date,Project Name,Hours Worked,Work Details,Extra Remarks
 2024-08-08,OUTR-FTS,6.0,Working on the User section UI,Amitav suggested to change the UI so that the client don't think we used the old code
 2024-08-09,GCEK,2.0,Trying to resolve the issue,
 2024-08-09,OJEE,2.5,Working on importing Pharma data from excel to mysql and fixing data and uploading to OJEE  Server,Amitav is co-ordinating with Billdesk
-2024-08-10,OUTR-FTS,8.0,Working on the Database models and UI,
 2024-08-09,OUTR-FTS,6.0,Working on Admin UI,
-2024-08-10,Daily Report,3.0,Working on Developing Daily Report App,
 2024-08-09,Daily Report,1.0,Planning & setting up environment for Developing Daily Report App,
+2024-08-10,OUTR-FTS,8.0,Working on the Database models and UI,
+2024-08-10,Daily Report,3.0,Working on Developing Daily Report App,
+2024-08-11,Daily Report,10.0,Studying & Created charts abd deployed on cloud server,
+2024-08-12,OUTR-FTS,9.0,Working on the Frontend User section,
+2024-08-13,OUTR-FTS,4.0,"Discussion with Sir, Planning on the flow as per the discussion and creating database tables",
+2024-08-13,DPSRKL,1.5,Testing Meeting settings with Amitav & Meeting with Clients,
+2024-08-13,GCEK,3.0,Changing code to send unique transaction id to bill-desk,
+2024-08-14,GCEK,4.0,Testing & fixing bugs and implementing the auto status checking of broken t_title("Time Spent on Each Project")
+            transaction,
+2024-08-14,CET,4.0,Went to CET college to deliver documents to Jagannath Sir,
